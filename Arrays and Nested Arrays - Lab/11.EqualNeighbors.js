@@ -12,7 +12,7 @@ function solve(array) {
             if (array[i][j] == array[i][j + 1]) {
                 count++;
             }
-            if (array[i + 1][j] == array[i + 1][j + 1]) {
+            if (i == length - 2 && array[i + 1][j] == array[i + 1][j + 1]) {
                 count++;
             }
         }
@@ -21,6 +21,4 @@ function solve(array) {
 }
 solve([['test', 'yes', 'yo', 'ho'],
 ['well', 'done', 'yo', '6'],
-['not', 'done', 'yet', '5']]
-
-);
+['not', 'done', 'yet', '5']]);
