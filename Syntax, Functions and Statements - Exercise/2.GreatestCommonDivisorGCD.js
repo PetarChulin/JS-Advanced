@@ -12,4 +12,11 @@ function division(a, b) {
     }
     console.log(divisor);
 }
+// variant 2
+// function solve(a, b) {
+
+//     while (a != b) { a > b ? a -= b : b -= a }
+//     console.log(a);
+// }
+solve(2154, 458);
 division(15,5);
