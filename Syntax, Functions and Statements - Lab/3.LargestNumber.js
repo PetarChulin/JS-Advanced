@@ -4,6 +4,7 @@ result = Math.max(n1, n2, n3);
 
 console.log('The largest number is ' + result + '.');    
 }
+solve(-3, -5, -22.5);
 // if (n1 > n2 && n1 > n3) {
 //     result = n1;
 // } else if (n2 > n1 && n2 > n3) {
@@ -13,4 +14,4 @@ console.log('The largest number is ' + result + '.');
 //     }
 //     console.log('The largest number is ' + result + '.');
 // }
-solve(-3, -5, -22.5);
+
