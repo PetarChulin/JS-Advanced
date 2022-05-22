@@ -9,11 +9,11 @@ function createAssemblyLine() {
             };
         },
         hasAudio: (car) => {
-            car.currentTrack = { name: null, artist: null };
+            car.currentTrack = { 
+                name: null, artist: null };
             car.nowPlaying = function playing() {
                 car.currentTrack !== null ?
                     console.log(`Now playing '${car.currentTrack.name}' by ${car.currentTrack.artist}`) : null;
-
             };
         },
         hasParktronic: (car) => {
@@ -24,7 +24,7 @@ function createAssemblyLine() {
             }
         }
     }
-    return assembly
+    return assembly;
 }
 const assemblyLine = createAssemblyLine();
 
