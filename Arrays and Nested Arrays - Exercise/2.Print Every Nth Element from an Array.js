@@ -1,7 +1,9 @@
 function printNthElement(array , step) {
     
-    return array.filter((e,i ) => i % step == 0);
+    return array.filter((e,i) => i % step == 0);
 }
+printNthElement(['5', '20', '31', '4', '20'], 
+2);
 
 //     let newArray = [];
 
@@ -12,5 +14,4 @@ function printNthElement(array , step) {
 //     return newArray;
 // }
 
-printNthElement(['5', '20', '31', '4', '20'], 
-2);
+
