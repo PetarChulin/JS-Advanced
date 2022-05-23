@@ -1,4 +1,4 @@
-function exctract(array) {
+function extract(array) {
 
     let newArray = [];
     let max = 0;
@@ -12,4 +12,4 @@ function exctract(array) {
     }
     return newArray;
 }
-exctract([1, 3, 8, 4, 10, 12, 3, 2, 24]);
+extract([1, 3, 8, 4, 10, 12, 3, 2, 24]);
