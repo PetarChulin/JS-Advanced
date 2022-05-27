@@ -1,37 +1,19 @@
-function catalogue(array) {
+function solve(input) {
 
-    let list = {};
-   
-    for (const products of array) {
+    let products = {};
+    let sortedProd = input.sort((a, b) => a.localeCompare(b));
+       for (const e of sortedProd) {
+        let [product, price] = e.split(' : ');
+        let letter = product[0];
 
-        let line = products.split(' : ')
-        let product = line[0];
-        let price = Number(line[1]);
+        !products.hasOwnProperty(letter) ? products[letter] = {} : null;
 
-        list[product] = price;
+        products[letter][product] = price;
     }
-
-    let sorted = Object.keys(list).sort().reduce((accumulator, key) => {
-        accumulator[key] = list[key];
-        return accumulator;
-    }, {});
-
-    let result = Object.keys(sorted);
-    let symbol = [];
-
-    for (const e of result) {
-        let letter = e.charAt(0);
-        symbol.push(letter);
-    }
-    let letters = [...new Set(symbol)];
-
-    for (const e of letters) {
-
-        console.log(e);
-        for (const p in sorted) {
-            if (p.charAt(0) == e) {
-                console.log(`  ${p}: ${list[p]}`);
-            }
+    for (const letter in products) {
+        console.log(letter);
+        for (const p in products[letter]) {
+            console.log(`  ${p}: ${products[letter][p]}`);
         }
     }
 }
