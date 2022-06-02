@@ -1,72 +1,70 @@
 function solve() {
-  let generateBtn = document.querySelector('button');
-  let buyBtn = Array.from(document.querySelectorAll('button'))[1];
+    let [generateBtn, buyBtn] = Array.from(document.querySelectorAll('button'));
 
-  const tableBody = document.querySelector('tbody');
-  generateBtn.addEventListener('click', generate);
-  buyBtn.addEventListener('click', buy);
+    let tableBody = document.querySelector('tbody');
+    generateBtn.addEventListener('click', generate);
+    buyBtn.addEventListener('click', buy);
 
 
-  function generate() {
-      let textArea = document.querySelector('textarea').value;
+    function generate() {
 
-      let parsedArray = JSON.parse(textArea);
+        let input = JSON.parse(document.querySelector('textarea').value);
 
-      for (let furniture of parsedArray) {
-          let tableRowElement = document.createElement('tr');
+        for (let furniture of input) {
+            let tr = document.createElement('tr');
 
-          let tdImage = document.createElement('td');
-          let tdName = document.createElement('td');
-          let tdPrice = document.createElement('td');
-          let tdFactor = document.createElement('td');
-          let tdMark = document.createElement('td');
+            let tdImage = document.createElement('td');
+            let tdName = document.createElement('td');
+            let tdPrice = document.createElement('td');
+            let tdFactor = document.createElement('td');
+            let tdMark = document.createElement('td');
 
-          tableRowElement.appendChild(tdImage);
-          tableRowElement.appendChild(tdName);
-          tableRowElement.appendChild(tdPrice);
-          tableRowElement.appendChild(tdFactor);
-          tableRowElement.appendChild(tdMark);
+            tr.appendChild(tdImage);
+            tr.appendChild(tdName);
+            tr.appendChild(tdPrice);
+            tr.appendChild(tdFactor);
+            tr.appendChild(tdMark);
 
-          let image = document.createElement('img');
-          image.src = furniture.img;
-          tdImage.appendChild(image);
+            let image = document.createElement('img');
+            image.src = furniture.img;
+            tdImage.appendChild(image);
 
-          tdName.innerText = furniture.name;
-          tdPrice.innerText = furniture.price;
-          tdFactor.innerText = furniture.decFactor;
+            tdName.innerText = furniture.name;
+            tdPrice.innerText = furniture.price;
+            tdFactor.innerText = furniture.decFactor;
 
-          let checkBox = document.createElement('input');
-          checkBox.type = 'checkbox';
+            let checkBox = document.createElement('input');
+            checkBox.type = 'checkbox';
 
-          tdMark.appendChild(checkBox);
+            tdMark.appendChild(checkBox);
 
-          tableBody.appendChild(tableRowElement);
-      }
-  }
+            tableBody.appendChild(tr);
+        }
+    }
 
-  function buy() {
-      let resultTextArea = Array.from(document.querySelectorAll('textarea'))[1];
-      let output = [];
+    function buy() {
+        let result = Array.from(document.querySelectorAll('textarea'))[1];
+        let output = [];
 
-      let toBuy = Array.from(document.querySelectorAll('input[type="checkbox"]'))
-          .filter(e => e.checked === true)
-          .map(e => e.parentNode.parentNode);
+        let toBuy = Array.from(document.querySelectorAll('input[type="checkbox"]'))
+            .filter(e => e.checked === true)
+            .map(e => e.parentNode.parentNode);
 
-      let bought = toBuy.map(e => Array.from(e.querySelectorAll('td'))[1].innerText)
-          .join(', ');
+        let bought = toBuy.map(e => Array.from(e.querySelectorAll('td'))[1].innerHTML)
+            .join(', ');
 
-      output.push(`Bought furniture: ${bought}`);
+        output.push(`Bought furniture: ${bought}`);
 
-      let totalPrice = toBuy.map(e => Array.from(e.querySelectorAll('td'))[2].innerText).map(Number)
-          .reduce((acc, current) => acc + current, 0);
+        let totalPrice = toBuy.map(e => Array.from(e.querySelectorAll('td'))[2].innerHTML).map(Number)
+            .reduce((acc, current) => acc + current, 0);
 
-      output.push(`Total price: ${totalPrice.toFixed(2)}`);
+        output.push(`Total price: ${totalPrice.toFixed(2)}`);
 
-      let averageFactor = toBuy.map(e => Array.from(e.querySelectorAll('td'))[3].innerText).map(Number)
-          .reduce((acc, current) => acc + current, 0) / toBuy.length;
+        let averageFactor = toBuy.map(e => Array.from(e.querySelectorAll('td'))[3].innerHTML).map(Number)
+            .reduce((acc, current) => acc + current, 0) / toBuy.length;
 
-      output.push(`Average decoration factor: ${averageFactor}`);
+        output.push(`Average decoration factor: ${averageFactor}`);
 
-      resultTextArea.value = output.join('\n');
-  }
+        result.value = output.join('\n');
+    }
 }
