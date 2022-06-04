@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="Services_files/style.css">
+</head>
+
+<body>
+    <main>
+
+        <h1>Computer &amp; Mobile Repair Services</h1>
+        <section id="main-container">
+
+            <div id="left">
+                <div id="head">
+                    <h1>Easy! Convenient! Quick!</h1>
+                    <p>Send the defective device directly to our Service Center.</p>
+                </div>
+            </div>
+
+            <div id="right">
+                <h1>Repair form </h1>
+                <form action="#">
+                    <label for="type-product">Product type:</label>
+                    <select id="type-product" name="type-product">
+                        <option value="Computer" selected="selected">Computer</option>
+                        <option value="Phone">Phone</option>
+                    </select>
+
+                    <label for="description">Description of the problem:</label>
+                    <textarea id="description" cols="20" placeholder="The device refuses to charge"></textarea>
+
+                    <label for="client-name">Client name:</label>
+                    <input type="text" id="client-name" name="client-name" placeholder="Petar Petrson">
+
+                    <label for="client-phone">Client phone:</label>
+                    <input type="text" id="client-phone" name="client-phone" placeholder="+359...">
+
+                    <button type="submit">Send form</button>
+                </form>
+            </div>
+        </section>
+
+        <div id="wrapper">
+
+            <section id="received-orders">
+                <h2>Received orders:</h2>
+                <img src="Services_files/slider_2.jpg">
+
+            <div class="container"><h2>Product type for repair: Computer</h2><h3>Client information: qwe, 123</h3><h4>Description of the problem: qwe</h4><button class="start-btn" disabled="disabled">Start repair</button><button class="finish-btn">Finish repair</button></div></section>
+
+
+            <section id="completed-orders">
+                <h2>Completed orders:</h2>
+                <img src="Services_files/completed-order.png">
+                <button class="clear-btn">Clear</button>
+
+            <div><h2>Product type for repair: Computer</h2><h3>Client information: , </h3><h4>Description of the problem: </h4></div></section>
+
+        </div>
+
+    </main>
+    <script src="Services_files/app.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
