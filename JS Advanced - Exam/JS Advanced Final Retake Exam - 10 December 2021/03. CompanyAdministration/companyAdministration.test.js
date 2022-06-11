@@ -49,7 +49,7 @@ describe('Tests companyAdministration', () => {
             expect(() => companyAdministration.firedEmployee(1, 1)).to.throw(`Invalid input`)
         });
         it('Test for negative index for remove', () => {
-            expect(() => companyAdministration.firedEmployee(['Peter', 'Joro', 'Kalin'], -3)).to.throw(`Invalid input`)
+            expect(() => companyAdministration.firedEmployee(['Peter', 'Joro', 'Kalin'], -1)).to.throw(`Invalid input`)
         });
         it('Test for  index bigger than array length', () => {
             expect(() => companyAdministration.firedEmployee(['Peter', 'Joro', 'Kalin'], 5)).to.throw(`Invalid input`)
