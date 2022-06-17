@@ -17,7 +17,6 @@ describe('Book Selection tests', () => {
     expect(() => bookSelection.isItAffordable('string', 'string').to.throw('Invalid input'));
     expect(() => bookSelection.isItAffordable(1, 'string').to.throw('Invalid input'));
     expect(() => bookSelection.isItAffordable(1, NaN).to.throw('Invalid input'));
-    expect(() => bookSelection.isItAffordable(1, NaN).to.throw('Invalid input'));
     expect(() => bookSelection.isItAffordable(undefined, []).to.throw('Invalid input'));
     expect(() => bookSelection.isItAffordable(undefined, {}).to.throw('Invalid input'));
     expect(bookSelection.isItAffordable(20, 10)).to.equal(`You don't have enough money`);
