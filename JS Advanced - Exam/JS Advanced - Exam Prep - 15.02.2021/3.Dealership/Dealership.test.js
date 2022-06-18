@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const dealership = require('./3.carDealership');
+const dealership = require('./Dealership');
 
 describe("Tests dealership", function () {
     describe('tests prices', () => {
