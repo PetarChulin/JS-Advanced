@@ -7,10 +7,7 @@ describe("Tests dealership", function () {
             expect(dealership.newCarCost('Audi A4 B8', 30000)).to.equal(15000);
             expect(dealership.newCarCost('Audi A6 4K', 21000)).to.equal(1000);
         });
-        it('tests new car cost', () => {
-            expect(dealership.newCarCost('Audi RS6', 300000)).to.equal(300000);
-        });
-    });
+      });
     describe('tests prices', () => {
         it('tests extras array', () => {
             expect(dealership.carEquipment(['heated seats', 'sliding roof', 'sport rims', ' navigation'], [0, 1])).to.deep.equal(['heated seats', 'sliding roof']);
